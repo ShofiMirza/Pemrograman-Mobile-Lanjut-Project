@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagihin - Aplikasi Manajemen Nota</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="brand">
+                <h1>Tagihin</h1>
+            </div>
+            <div class="user-controls">
+                <button class="btn-icon"><i class="fas fa-bell"></i></button>
+                <button class="btn-icon"><i class="fas fa-user-circle"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h2>Daftar Pelanggan</h2>
+                <button id="add-customer-btn" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Tambah Pelanggan
+                </button>
+            </div>
+            
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Cari pelanggan...">
+            </div>
+            
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Total Pelanggan</h3>
+                        <p>24</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Total Nota</h3>
+                        <p>56</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="card-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Belum Lunas</h3>
+                        <p>18</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="customer-list">
+                <div class="customer-item" data-id="1">
+                    <div class="customer-info">
+                        <h3>Toko Bangunan Jaya Abadi</h3>
+                        <p><i class="fas fa-phone"></i> 0812-3456-7890</p>
+                    </div>
+                    <div class="customer-stats">
+                        <div class="stat">
+                            <span class="stat-label">Nota:</span>
+                            <span class="stat-value">4</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Total:</span>
+                            <span class="stat-value">Rp 8.500.000</span>
+                        </div>
+                    </div>
+                    <div class="customer-actions">
+                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="customer-item" data-id="2">
+                    <div class="customer-info">
+                        <h3>UD Makmur Sejahtera</h3>
+                        <p><i class="fas fa-phone"></i> 0856-7890-1234</p>
+                    </div>
+                    <div class="customer-stats">
+                        <div class="stat">
+                            <span class="stat-label">Nota:</span>
+                            <span class="stat-value">2</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Total:</span>
+                            <span class="stat-value">Rp 5.250.000</span>
+                        </div>
+                    </div>
+                    <div class="customer-actions">
+                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="customer-item" data-id="3">
+                    <div class="customer-info">
+                        <h3>Toko Bangunan Berkah</h3>
+                        <p><i class="fas fa-phone"></i> 0877-1234-5678</p>
+                    </div>
+                    <div class="customer-stats">
+                        <div class="stat">
+                            <span class="stat-label">Nota:</span>
+                            <span class="stat-value">6</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Total:</span>
+                            <span class="stat-value">Rp 12.750.000</span>
+                        </div>
+                    </div>
+                    <div class="customer-actions">
+                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="customer-item" data-id="4">
+                    <div class="customer-info">
+                        <h3>CV Bangun Karya</h3>
+                        <p><i class="fas fa-phone"></i> 0831-9876-5432</p>
+                    </div>
+                    <div class="customer-stats">
+                        <div class="stat">
+                            <span class="stat-label">Nota:</span>
+                            <span class="stat-value">3</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Total:</span>
+                            <span class="stat-value">Rp 7.800.000</span>
+                        </div>
+                    </div>
+                    <div class="customer-actions">
+                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item active">
+                <i class="fas fa-users"></i>
+                <span>Pelanggan</span>
+            </a>
+            <a href="invoices.html" class="nav-item">
+                <i class="fas fa-file-invoice"></i>
+                <span>Nota</span>
+            </a>
+            <a href="payments.html" class="nav-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Pembayaran</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Pengaturan</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

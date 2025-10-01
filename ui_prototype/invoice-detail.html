@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Nota - Tagihin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="back-button">
+                <a href="invoices.html"><i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="page-title">
+                <h2>Detail Nota</h2>
+            </div>
+            <div class="action-buttons">
+                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="invoice-detail-card">
+                <div class="invoice-header">
+                    <div class="invoice-title">
+                        <h2>Nota #INV-2023-001</h2>
+                        <span class="status-badge unpaid">Belum Lunas</span>
+                    </div>
+                    <div class="invoice-customer">
+                        <p><i class="fas fa-store"></i> Toko Bangunan Jaya Abadi</p>
+                        <a href="customer-detail.html" class="link-btn">Lihat Pelanggan</a>
+                    </div>
+                </div>
+                
+                <div class="invoice-dates">
+                    <div class="date-item">
+                        <h4>Tanggal Nota</h4>
+                        <p>15 Nov 2023</p>
+                    </div>
+                    <div class="date-item">
+                        <h4>Jatuh Tempo</h4>
+                        <p>15 Des 2023</p>
+                    </div>
+                    <div class="date-item">
+                        <h4>Sisa Waktu</h4>
+                        <p class="due-warning">2 hari lagi</p>
+                    </div>
+                </div>
+                
+                <div class="invoice-total">
+                    <h3>Total Tagihan</h3>
+                    <p class="total-amount">Rp 3.500.000</p>
+                </div>
+                
+                <div class="invoice-actions-group">
+                    <button class="action-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Kirim Pengingat</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-print"></i>
+                        <span>Cetak Nota</span>
+                    </button>
+                    <button class="action-btn primary">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Catat Pembayaran</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="section-header">
+                <h3>Rincian Barang</h3>
+            </div>
+            
+            <div class="items-table">
+                <div class="item-row header">
+                    <div class="item-cell">Barang</div>
+                    <div class="item-cell">Jumlah</div>
+                    <div class="item-cell">Harga</div>
+                    <div class="item-cell">Total</div>
+                </div>
+                
+                <div class="item-row">
+                    <div class="item-cell">Semen Tiga Roda 50kg</div>
+                    <div class="item-cell">20</div>
+                    <div class="item-cell">Rp 65.000</div>
+                    <div class="item-cell">Rp 1.300.000</div>
+                </div>
+                
+                <div class="item-row">
+                    <div class="item-cell">Besi Beton 10mm</div>
+                    <div class="item-cell">50</div>
+                    <div class="item-cell">Rp 24.000</div>
+                    <div class="item-cell">Rp 1.200.000</div>
+                </div>
+                
+                <div class="item-row">
+                    <div class="item-cell">Paku 7cm (per kg)</div>
+                    <div class="item-cell">10</div>
+                    <div class="item-cell">Rp 20.000</div>
+                    <div class="item-cell">Rp 200.000</div>
+                </div>
+                
+                <div class="item-row">
+                    <div class="item-cell">Cat Tembok Nippon 5kg</div>
+                    <div class="item-cell">5</div>
+                    <div class="item-cell">Rp 160.000</div>
+                    <div class="item-cell">Rp 800.000</div>
+                </div>
+                
+                <div class="item-row total">
+                    <div class="item-cell" colspan="3">Total</div>
+                    <div class="item-cell">Rp 3.500.000</div>
+                </div>
+            </div>
+            
+            <div class="section-header">
+                <h3>Riwayat Pembayaran</h3>
+            </div>
+            
+            <div class="payment-history">
+                <div class="no-payment-message">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Belum ada pembayaran</p>
+                </div>
+                <!-- Contoh jika sudah ada pembayaran:
+                <div class="payment-item">
+                    <div class="payment-info">
+                        <h4>Pembayaran #1</h4>
+                        <p><i class="far fa-calendar-alt"></i> 05 Des 2023</p>
+                    </div>
+                    <div class="payment-amount">
+                        <p>Rp 1.000.000</p>
+                    </div>
+                </div>
+                -->
+            </div>
+            
+            <div class="section-header">
+                <h3>Catatan</h3>
+            </div>
+            
+            <div class="invoice-notes">
+                <p>Pembayaran paling lambat 30 hari setelah nota diterima. Jika ada pertanyaan, silahkan hubungi kami.</p>
+            </div>
+        </main>
+        
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Pelanggan</span>
+            </a>
+            <a href="invoices.html" class="nav-item active">
+                <i class="fas fa-file-invoice"></i>
+                <span>Nota</span>
+            </a>
+            <a href="payments.html" class="nav-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Pembayaran</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Pengaturan</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
