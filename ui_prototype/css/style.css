@@ -10,20 +10,21 @@
 }
 
 :root {
-    --color-primary: #1e88e5;
-    --color-primary-dark: #1565c0;
-    --color-primary-light: #42a5f5;
-    --color-secondary: #4caf50;
-    --color-secondary-dark: #388e3c;
-    --color-secondary-light: #66bb6a;
-    --color-warning: #ff9800;
-    --color-danger: #f44336;
-    --color-success: #4caf50;
-    --color-info: #2196f3;
-    --color-dark: #212121;
-    --color-gray: #9e9e9e;
-    --color-light-gray: #e0e0e0;
-    --color-lighter-gray: #f5f5f5;
+    /* Grayscale color palette for low-fidelity wireframing */
+    --color-primary: #808080;
+    --color-primary-dark: #666666;
+    --color-primary-light: #999999;
+    --color-secondary: #808080;
+    --color-secondary-dark: #666666;
+    --color-secondary-light: #999999;
+    --color-warning: #aaaaaa;
+    --color-danger: #aaaaaa;
+    --color-success: #aaaaaa;
+    --color-info: #aaaaaa;
+    --color-dark: #333333;
+    --color-gray: #999999;
+    --color-light-gray: #cccccc;
+    --color-lighter-gray: #f0f0f0;
     --color-white: #ffffff;
     --color-black: #000000;
     
@@ -94,8 +95,8 @@ a:hover {
 
 /* ===== HEADER ===== */
 .app-header {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    background-color: var(--color-light-gray);
+    color: var(--color-dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,7 +115,7 @@ a:hover {
 }
 
 .back-button a {
-    color: var(--color-white);
+    color: var(--color-dark);
     font-size: var(--font-size-xlarge);
 }
 
@@ -137,7 +138,7 @@ a:hover {
 .btn {
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius-medium);
-    border: none;
+    border: 1px solid var(--color-gray);
     font-size: var(--font-size-normal);
     font-weight: 500;
     cursor: pointer;
@@ -153,33 +154,32 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    background-color: var(--color-light-gray);
+    color: var(--color-dark);
+    border: 1px solid var(--color-dark);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-gray);
 }
 
 .btn-secondary {
-    background-color: var(--color-light-gray);
+    background-color: var(--color-lighter-gray);
     color: var(--color-dark);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-gray);
-    color: var(--color-white);
+    background-color: var(--color-light-gray);
 }
 
 .btn-outline {
     background-color: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
+    color: var(--color-dark);
+    border: 1px solid var(--color-dark);
 }
 
 .btn-outline:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    background-color: var(--color-lighter-gray);
 }
 
 .btn-sm {
@@ -247,7 +247,8 @@ a:hover {
 }
 
 .bottom-nav .nav-item.active {
-    color: var(--color-primary);
+    color: var(--color-dark);
+    font-weight: bold;
 }
 
 /* ===== DASHBOARD ===== */
@@ -303,13 +304,14 @@ a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    border: 1px solid var(--color-light-gray);
 }
 
 .card-icon {
     font-size: var(--font-size-xlarge);
-    color: var(--color-primary);
+    color: var(--color-dark);
     margin-bottom: var(--spacing-sm);
-    background-color: rgba(33, 150, 243, 0.1);
+    background-color: var(--color-lighter-gray);
     width: 50px;
     height: 50px;
     display: flex;
@@ -318,14 +320,9 @@ a:hover {
     border-radius: 50%;
 }
 
-.warning-icon {
-    color: var(--color-warning);
-    background-color: rgba(255, 152, 0, 0.1);
-}
-
-.success-icon {
-    color: var(--color-success);
-    background-color: rgba(76, 175, 80, 0.1);
+.warning-icon, .success-icon {
+    color: var(--color-dark);
+    background-color: var(--color-lighter-gray);
 }
 
 .card-info h3 {
@@ -397,19 +394,20 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid var(--color-light-gray);
     border-left: 4px solid var(--color-light-gray);
 }
 
 .invoice-item.paid {
-    border-left-color: var(--color-success);
+    border-left-color: var(--color-dark);
 }
 
 .invoice-item.unpaid {
-    border-left-color: var(--color-warning);
+    border-left-color: var(--color-gray);
 }
 
 .invoice-item.due {
-    border-left-color: var(--color-danger);
+    border-left-color: var(--color-black);
 }
 
 .invoice-info h3 {
@@ -439,21 +437,19 @@ a:hover {
     border-radius: var(--border-radius-small);
     font-size: var(--font-size-small);
     font-weight: 500;
+    border: 1px solid var(--color-light-gray);
 }
 
 .status-badge.paid {
-    background-color: rgba(76, 175, 80, 0.1);
-    color: var(--color-success);
+    background-color: var(--color-lighter-gray);
 }
 
 .status-badge.unpaid {
-    background-color: rgba(255, 152, 0, 0.1);
-    color: var(--color-warning);
+    background-color: var(--color-lighter-gray);
 }
 
 .status-badge.due {
-    background-color: rgba(244, 67, 54, 0.1);
-    color: var(--color-danger);
+    background-color: var(--color-lighter-gray);
 }
 
 /* ===== FILTER CHIPS ===== */
@@ -478,9 +474,10 @@ a:hover {
 }
 
 .filter-chip.active {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-color: var(--color-primary);
+    background-color: var(--color-light-gray);
+    color: var(--color-dark);
+    border-color: var(--color-gray);
+    font-weight: bold;
 }
 
 /* ===== CUSTOMER DETAIL ===== */
@@ -490,6 +487,7 @@ a:hover {
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-small);
     margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--color-light-gray);
 }
 
 .customer-header {
@@ -500,15 +498,16 @@ a:hover {
 
 .customer-avatar {
     font-size: 2.5rem;
-    color: var(--color-primary);
+    color: var(--color-dark);
     margin-right: var(--spacing-md);
-    background-color: rgba(33, 150, 243, 0.1);
+    background-color: var(--color-lighter-gray);
     width: 70px;
     height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    border: 1px solid var(--color-light-gray);
 }
 
 .customer-main-info h2 {
@@ -556,13 +555,13 @@ a:hover {
 }
 
 .action-btn.primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-color: var(--color-primary);
+    background-color: var(--color-light-gray);
+    color: var(--color-dark);
+    border: 1px solid var(--color-dark);
 }
 
 .action-btn.primary i {
-    color: var(--color-white);
+    color: var(--color-dark);
 }
 
 .customer-summary {
@@ -1167,6 +1166,166 @@ a:hover {
 .auth-footer {
     text-align: center;
     font-size: var(--font-size-small);
+}
+
+/* ===== PAYMENT DETAIL STYLES ===== */
+.summary-table {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-small);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--color-light-gray);
+}
+
+.summary-row {
+    display: flex;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-label {
+    flex: 1;
+    font-weight: 500;
+}
+
+.summary-value {
+    flex: 1;
+    text-align: right;
+    font-weight: 500;
+}
+
+/* ===== ADD PAYMENT STYLES ===== */
+.invoice-summary {
+    padding: var(--spacing-md);
+    background-color: var(--color-lighter-gray);
+    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--color-light-gray);
+}
+
+.invoice-summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xs);
+}
+
+.invoice-summary-item:last-child {
+    margin-bottom: 0;
+    padding-top: var(--spacing-xs);
+    border-top: 1px solid var(--color-light-gray);
+    font-weight: bold;
+}
+
+.invoice-summary-item .label {
+    color: var(--color-gray);
+}
+
+.status-preview {
+    padding: var(--spacing-md);
+    background-color: var(--color-lighter-gray);
+    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--color-light-gray);
+}
+
+.status-preview-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xs);
+}
+
+.status-preview-item:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== REPORTS PAGE STYLES ===== */
+.date-filter {
+    display: flex;
+    align-items: center;
+}
+
+.charts-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.chart-container {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-small);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--color-light-gray);
+}
+
+.chart-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.chart-placeholder {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    border-bottom: 2px solid var(--color-light-gray);
+    padding: 0 var(--spacing-md);
+}
+
+.chart-bars {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.chart-bar {
+    width: 15%;
+    background-color: var(--color-light-gray);
+    border: 1px solid var(--color-gray);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.chart-bar span {
+    position: absolute;
+    bottom: -25px;
+    font-size: var(--font-size-small);
+    color: var(--color-gray);
+}
+
+.report-table {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-small);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--color-light-gray);
+}
+
+.report-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.report-row:last-child {
+    border-bottom: none;
+}
+
+.report-row.header {
+    background-color: var(--color-lighter-gray);
+    font-weight: 500;
+}
+
+.report-cell {
+    padding: 0 var(--spacing-xs);
 }
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
