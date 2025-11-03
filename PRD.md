@@ -46,7 +46,7 @@ Aplikasi **Tagihin** bertujuan untuk:
 - Input tanggal, nominal, metode, dan catatan  
 
 ### 4.4 Pengingat WhatsApp
-- Mengirim format pengingat otomatis kepada pelanggan yang menunggak  
+- Mengirim pengingat kepada pelanggan yang memiliki kredit
 
 ### 4.5 Laporan Ringkas
 - Total utang aktif  
