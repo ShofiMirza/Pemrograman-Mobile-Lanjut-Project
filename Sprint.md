@@ -1,7 +1,7 @@
 # Timeline Iterasi Proyek Akhir – Aplikasi Manajemen Nota "Tagihin"
 
 Metode: Agile
-Durasi: 4 Minggu
+
 
 ---
 
@@ -55,8 +55,7 @@ Durasi: 4 Minggu
 - Validasi input data & error handling ringan
 - Menyusun riwayat pembayaran global (optional)
 - Dokumentasi GitHub & demo aplikasi
-- Perekaman video presentasi (1–5 menit)
-- Pengumpulan laporan progres akhir
+
 
 ---
 
