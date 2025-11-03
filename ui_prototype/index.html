@@ -3,171 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tagihin - Aplikasi Manajemen Nota</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Low Fidelity - Aplikasi Tagihin</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="brand">
-                <h1>Tagihin</h1>
-            </div>
-            <div class="user-controls">
-                <button class="btn-icon"><i class="fas fa-bell"></i></button>
-                <button class="btn-icon"><i class="fas fa-user-circle"></i></button>
-            </div>
-        </header>
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <h1>Tagihin App - Low Fidelity</h1>
+        </div>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="dashboard-header">
-                <h2>Daftar Pelanggan</h2>
-                <button id="add-customer-btn" class="btn btn-primary">
-                    <i class="fas fa-plus"></i> Tambah Pelanggan
-                </button>
-            </div>
-            
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Cari pelanggan...">
-            </div>
-            
-            <div class="summary-cards">
-                <div class="summary-card">
-                    <div class="card-icon">
-                        <i class="fas fa-users"></i>
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="pelanggan">Pelanggan</button>
+            <button class="tab-button" data-tab="riwayat">Riwayat</button>
+            <button class="tab-button" data-tab="laporan">Laporan</button>
+            <button class="tab-button" data-tab="settings">Settings</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Halaman Pelanggan -->
+            <div id="pelanggan" class="tab-pane active">
+                <div class="screen">
+                    <div class="screen-header">
+                        <h2>Daftar Pelanggan</h2>
+                        <button class="btn-primary" onclick="showScreen('add-customer')">+ Tambah Pelanggan</button>
                     </div>
-                    <div class="card-info">
-                        <h3>Total Pelanggan</h3>
-                        <p>24</p>
-                    </div>
-                </div>
-                <div class="summary-card">
-                    <div class="card-icon">
-                        <i class="fas fa-file-invoice"></i>
-                    </div>
-                    <div class="card-info">
-                        <h3>Total Nota</h3>
-                        <p>56</p>
-                    </div>
-                </div>
-                <div class="summary-card">
-                    <div class="card-icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </div>
-                    <div class="card-info">
-                        <h3>Belum Lunas</h3>
-                        <p>18</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="customer-list">
-                <div class="customer-item" data-id="1">
-                    <div class="customer-info">
-                        <h3>Toko Bangunan Jaya Abadi</h3>
-                        <p><i class="fas fa-phone"></i> 0812-3456-7890</p>
-                    </div>
-                    <div class="customer-stats">
-                        <div class="stat">
-                            <span class="stat-label">Nota:</span>
-                            <span class="stat-value">4</span>
+                    <div class="wireframe-list">
+                        <div class="list-item" onclick="showScreen('customer-detail')">
+                            <div class="list-item-content">
+                                <div class="box-text large">Nama Pelanggan 1</div>
+                                <div class="box-text small">0812-xxxx-xxxx</div>
+                                <div class="box-text small">Alamat singkat</div>
+                            </div>
+                            <div class="badge badge-warning">Rp 5.000.000</div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-label">Total:</span>
-                            <span class="stat-value">Rp 8.500.000</span>
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="box-text large">Nama Pelanggan 2</div>
+                                <div class="box-text small">0813-xxxx-xxxx</div>
+                                <div class="box-text small">Alamat singkat</div>
+                            </div>
+                            <div class="badge badge-success">LUNAS</div>
                         </div>
-                    </div>
-                    <div class="customer-actions">
-                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-                
-                <div class="customer-item" data-id="2">
-                    <div class="customer-info">
-                        <h3>UD Makmur Sejahtera</h3>
-                        <p><i class="fas fa-phone"></i> 0856-7890-1234</p>
-                    </div>
-                    <div class="customer-stats">
-                        <div class="stat">
-                            <span class="stat-label">Nota:</span>
-                            <span class="stat-value">2</span>
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="box-text large">Nama Pelanggan 3</div>
+                                <div class="box-text small">0814-xxxx-xxxx</div>
+                                <div class="box-text small">Alamat singkat</div>
+                            </div>
+                            <div class="badge badge-warning">Rp 2.500.000</div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-label">Total:</span>
-                            <span class="stat-value">Rp 5.250.000</span>
-                        </div>
-                    </div>
-                    <div class="customer-actions">
-                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-                
-                <div class="customer-item" data-id="3">
-                    <div class="customer-info">
-                        <h3>Toko Bangunan Berkah</h3>
-                        <p><i class="fas fa-phone"></i> 0877-1234-5678</p>
-                    </div>
-                    <div class="customer-stats">
-                        <div class="stat">
-                            <span class="stat-label">Nota:</span>
-                            <span class="stat-value">6</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-label">Total:</span>
-                            <span class="stat-value">Rp 12.750.000</span>
-                        </div>
-                    </div>
-                    <div class="customer-actions">
-                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-                
-                <div class="customer-item" data-id="4">
-                    <div class="customer-info">
-                        <h3>CV Bangun Karya</h3>
-                        <p><i class="fas fa-phone"></i> 0831-9876-5432</p>
-                    </div>
-                    <div class="customer-stats">
-                        <div class="stat">
-                            <span class="stat-label">Nota:</span>
-                            <span class="stat-value">3</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-label">Total:</span>
-                            <span class="stat-value">Rp 7.800.000</span>
-                        </div>
-                    </div>
-                    <div class="customer-actions">
-                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
-        </main>
-        
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav">
-            <a href="index.html" class="nav-item active">
-                <i class="fas fa-users"></i>
-                <span>Pelanggan</span>
-            </a>
-            <a href="invoices.html" class="nav-item">
-                <i class="fas fa-file-invoice"></i>
-                <span>Nota</span>
-            </a>
-            <a href="payments.html" class="nav-item">
-                <i class="fas fa-money-bill-wave"></i>
-                <span>Pembayaran</span>
-            </a>
-            <a href="reports.html" class="nav-item">
-                <i class="fas fa-chart-bar"></i>
-                <span>Laporan</span>
-            </a>
-        </nav>
+
+            <!-- Halaman Riwayat -->
+            <div id="riwayat" class="tab-pane">
+                <div class="screen">
+                    <div class="screen-header">
+                        <h2>Riwayat Pembayaran</h2>
+                    </div>
+                    <div class="wireframe-list">
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="box-text large">Pelanggan 1 - Pembayaran #1</div>
+                                <div class="box-text small">01/11/2025</div>
+                                <div class="box-text small">Transfer</div>
+                            </div>
+                            <div class="badge badge-success">Rp 1.000.000</div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="box-text large">Pelanggan 2 - Pembayaran #2</div>
+                                <div class="box-text small">31/10/2025</div>
+                                <div class="box-text small">Cash</div>
+                            </div>
+                            <div class="badge badge-success">Rp 500.000</div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="box-text large">Pelanggan 3 - Pembayaran #1</div>
+                                <div class="box-text small">30/10/2025</div>
+                                <div class="box-text small">Transfer</div>
+                            </div>
+                            <div class="badge badge-success">Rp 2.000.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Halaman Laporan -->
+            <div id="laporan" class="tab-pane">
+                <div class="screen">
+                    <div class="screen-header">
+                        <h2>Laporan</h2>
+                    </div>
+                    <div class="report-cards">
+                        <div class="card">
+                            <div class="card-title">Total Utang Aktif</div>
+                            <div class="card-value">Rp 15.000.000</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">Total Cicilan Masuk</div>
+                            <div class="card-value">Rp 8.500.000</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">Pelanggan Menunggak</div>
+                            <div class="card-value">5 Pelanggan</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">Transaksi Aktif</div>
+                            <div class="card-value">12 Transaksi</div>
+                        </div>
+                    </div>
+                    <div class="screen-header">
+                        <h3>Pelanggan Menunggak</h3>
+                    </div>
+                    <div class="wireframe-list">
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="box-text large">Pelanggan A</div>
+                                <div class="box-text small">Jatuh tempo: 15 Nov 2025</div>
+                            </div>
+                            <div class="badge badge-danger">Rp 3.000.000</div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="box-text large">Pelanggan B</div>
+                                <div class="box-text small">Jatuh tempo: 20 Nov 2025</div>
+                            </div>
+                            <div class="badge badge-danger">Rp 5.000.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Halaman Settings -->
+            <div id="settings" class="tab-pane">
+                <div class="screen">
+                    <div class="screen-header">
+                        <h2>Pengaturan</h2>
+                    </div>
+                    <div class="settings-list">
+                        <div class="settings-item">
+                            <div class="box-text">Profil Toko</div>
+                        </div>
+                        <div class="settings-item">
+                            <div class="box-text">Notifikasi</div>
+                        </div>
+                        <div class="settings-item">
+                            <div class="box-text">Backup Data</div>
+                        </div>
+                        <div class="settings-item">
+                            <div class="box-text">Tentang Aplikasi</div>
+                        </div>
+                        <div class="settings-item">
+                            <div class="box-text danger">Logout</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Screens -->
+        <div id="modal-container" class="modal">
+            <!-- Add Customer Screen -->
+            <div id="add-customer" class="modal-content screen">
+                <div class="screen-header">
+                    <button class="btn-back" onclick="hideModal()">← Kembali</button>
+                    <h2>Tambah Pelanggan</h2>
+                </div>
+                <div class="form">
+                    <div class="form-group">
+                        <label class="box-text small">Nama Pelanggan</label>
+                        <div class="input-box"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">No. HP / WhatsApp</label>
+                        <div class="input-box"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Alamat</label>
+                        <div class="input-box large"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Catatan</label>
+                        <div class="input-box large"></div>
+                    </div>
+                    <button class="btn-primary full-width">Simpan</button>
+                </div>
+            </div>
+
+            <!-- Customer Detail Screen -->
+            <div id="customer-detail" class="modal-content screen">
+                <div class="screen-header">
+                    <button class="btn-back" onclick="hideModal()">← Kembali</button>
+                    <h2>Detail Pelanggan</h2>
+                </div>
+                <div class="customer-info">
+                    <div class="box-text large">Nama Pelanggan 1</div>
+                    <div class="box-text small">0812-xxxx-xxxx</div>
+                    <div class="box-text small">Alamat lengkap pelanggan</div>
+                    <div class="badge badge-warning">Total Utang: Rp 5.000.000</div>
+                </div>
+                <div class="screen-header">
+                    <h3>Daftar Transaksi</h3>
+                    <button class="btn-primary" onclick="showScreen('add-transaction')">+ Transaksi Baru</button>
+                </div>
+                <div class="wireframe-list">
+                    <div class="list-item" onclick="showScreen('transaction-detail')">
+                        <div class="list-item-content">
+                            <div class="box-text large">Pembelian Semen & Pasir</div>
+                            <div class="box-text small">01/11/2025</div>
+                            <div class="box-text small">Total: Rp 10.000.000 | DP: Rp 5.000.000</div>
+                        </div>
+                        <div class="badge badge-warning">Sisa: Rp 5.000.000</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <div class="box-text large">Beli Batu Bata</div>
+                            <div class="box-text small">15/10/2025</div>
+                            <div class="box-text small">Total: Rp 3.000.000 | DP: Rp 3.000.000</div>
+                        </div>
+                        <div class="badge badge-success">LUNAS</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Transaction Screen -->
+            <div id="add-transaction" class="modal-content screen">
+                <div class="screen-header">
+                    <button class="btn-back" onclick="hideModal()">← Kembali</button>
+                    <h2>Tambah Transaksi</h2>
+                </div>
+                <div class="form">
+                    <div class="form-group">
+                        <label class="box-text small">Tanggal Nota</label>
+                        <div class="input-box"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Deskripsi Barang/Jasa</label>
+                        <div class="input-box large"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Total (Rp)</label>
+                        <div class="input-box"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Uang Muka / DP (Rp)</label>
+                        <div class="input-box"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Sisa Utang (Otomatis)</label>
+                        <div class="input-box disabled">Rp 0</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Foto Nota</label>
+                        <div class="upload-box">
+                            <div class="box-text small">📷 Upload Foto</div>
+                        </div>
+                    </div>
+                    <button class="btn-primary full-width">Simpan Transaksi</button>
+                </div>
+            </div>
+
+            <!-- Transaction Detail Screen -->
+            <div id="transaction-detail" class="modal-content screen">
+                <div class="screen-header">
+                    <button class="btn-back" onclick="hideModal()">← Kembali</button>
+                    <h2>Detail Transaksi</h2>
+                </div>
+                <div class="transaction-info">
+                    <div class="box-text large">Pembelian Semen & Pasir</div>
+                    <div class="box-text small">Tanggal: 01/11/2025</div>
+                    <div class="info-row">
+                        <span class="box-text">Total:</span>
+                        <span class="box-text">Rp 10.000.000</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="box-text">DP:</span>
+                        <span class="box-text">Rp 5.000.000</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="box-text">Sisa:</span>
+                        <span class="box-text bold">Rp 5.000.000</span>
+                    </div>
+                    <div class="badge badge-warning">BELUM LUNAS</div>
+                    <div class="photo-box">
+                        <div class="box-text small">📷 Foto Nota</div>
+                    </div>
+                </div>
+                <div class="screen-header">
+                    <h3>Riwayat Pembayaran</h3>
+                    <button class="btn-primary" onclick="showScreen('add-payment')">+ Tambah Pembayaran</button>
+                </div>
+                <div class="wireframe-list">
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <div class="box-text">Pembayaran #1</div>
+                            <div class="box-text small">05/11/2025 - Transfer</div>
+                        </div>
+                        <div class="badge badge-success">Rp 2.000.000</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <div class="box-text">Pembayaran #2</div>
+                            <div class="box-text small">10/11/2025 - Cash</div>
+                        </div>
+                        <div class="badge badge-success">Rp 3.000.000</div>
+                    </div>
+                </div>
+                <button class="btn-whatsapp full-width">📱 Kirim Pengingat WhatsApp</button>
+            </div>
+
+            <!-- Add Payment Screen -->
+            <div id="add-payment" class="modal-content screen">
+                <div class="screen-header">
+                    <button class="btn-back" onclick="hideModal()">← Kembali</button>
+                    <h2>Tambah Pembayaran</h2>
+                </div>
+                <div class="form">
+                    <div class="form-group">
+                        <label class="box-text small">Tanggal Pembayaran</label>
+                        <div class="input-box"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Nominal (Rp)</label>
+                        <div class="input-box"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Metode Pembayaran</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <div class="radio-circle"></div>
+                                <span class="box-text small">Cash</span>
+                            </div>
+                            <div class="radio-item">
+                                <div class="radio-circle"></div>
+                                <span class="box-text small">Transfer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="box-text small">Catatan (Opsional)</label>
+                        <div class="input-box large"></div>
+                    </div>
+                    <button class="btn-primary full-width">Simpan Pembayaran</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
